@@ -21,11 +21,13 @@ public class UserRepository : IUserRepository
     
     public IEnumerable<User> GetAll(Pagination pagination)
     {
-        var users = 
-            appDbContext.Users
-                .Skip(pagination.Page)
-                .Take(pagination.ItemsPerPage)
-                .Where(user => user.Name.Contains(pagination.FilterValue));
+        var skipAmount = (pagination.Page - 1) * pagination.ItemsPerPage;
+        var users = appDbContext.Users
+            .Skip(skipAmount)
+            .Take(pagination.ItemsPerPage)
+            .Where(user => user.Name.Contains(pagination.FilterValue))
+            .ToList();
+
         return users;
     }
 
