@@ -1,0 +1,53 @@
+﻿@page "/user/edit/{UserId}"
+@using Core.Models
+@using FE_ClientSide.Services
+@inject UserService UserService
+@inject NavigationManager NavigationManager
+
+<h2>Edit User</h2>
+
+@if (_userToEdit != null)
+{
+    <EditForm Model="_userToEdit" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator/>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <InputText id="email" class="form-control" @bind-Value="_userToEdit.Email"/>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <button class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+    </EditForm>
+}
+else
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+
+@code {
+
+    [Parameter]
+    public string UserId { get; set; } = null!;
+
+    private UserReadDto? _userToEdit;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _userToEdit = await UserService.GetById(int.Parse(UserId));
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        await UserService.UpdateUser(int.Parse(UserId), _userToEdit);
+        NavigationManager.NavigateTo("/users");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/users");
+    }
+
+}

@@ -31,3 +31,21 @@ Core/obj/Debug/net6.0/
 FE/bin/Debug/net6.0/
 
 .DS_Store
+
+FE/obj/
+
+FE_ClientSide/bin/Debug/net6.0/
+
+*.gz
+
+FE_ClientSide/obj/Debug/net6.0/
+
+FE_ClientSide/obj/
+
+FE_ClientSide/wwwroot/css/open-iconic/
+
+FE_ServerSide/bin/Debug/net6.0/
+
+FE_ServerSide/obj/Debug/net6.0/
+
+FE_ServerSide/obj/
