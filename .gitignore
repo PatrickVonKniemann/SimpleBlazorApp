@@ -25,3 +25,5 @@ FE/bin/Debug/net6.0/FE.pdb
 FE/bin/Debug/net6.0/FE.dll
 
 FE/obj/staticwebassets.pack.sentinel
+
+Core/obj/Debug/net6.0/

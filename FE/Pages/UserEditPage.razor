@@ -35,18 +35,18 @@ else
 @code {
 
     [Parameter]
-    public int UserId { get; set; }
+    public string UserId { get; set; }
 
     private UserReadDto? _userToEdit;
 
     protected override async Task OnInitializedAsync()
     {
-        _userToEdit = await UserService.GetById(UserId);
+        _userToEdit = await UserService.GetById(int.Parse(UserId));
     }
 
     private async Task HandleValidSubmit()
     {
-        await UserService.UpdateUser(UserId, _userToEdit);
+        await UserService.UpdateUser(int.Parse(UserId), _userToEdit);
         NavigationManager.NavigateTo("/users");
     }
 
