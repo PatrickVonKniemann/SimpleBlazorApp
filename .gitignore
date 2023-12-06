@@ -1,15 +1,21 @@
-
+# JetBrains Rider settings
 .idea/*
+
+# Protobuf generated files
 *.pb
 
+# Binaries for API project
 API/bin/Debug/net6.0/
 
+# Object files for API project
 API/obj/Debug/net6.0/
-
 API/obj/
 
+# Binaries for Core project
 Core/bin/Debug/net6.0/
 
+# Object files for FE project
 FE/obj/Debug/net6.0/
 
+# Specific Object files for Core project
 Core/obj/Debug/net6.0/refint/
