@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MnILtLGQxvKvQmqfxw1PKjktxEzpCMY2d1Beb5AV5vQtHj2nNszmhbltUCqn3Ufxyv4Vzik3HTPGPBiwfBu1hg==",
+  "dgSpecHash": "X+6ZJgfNyOa6C8S9iWC79etEHUbxAS7D1w3FiF+sGxoly9mr4b/t9q8K7GEXzslE6hKDQTt2G89XKMpK5W/S8A==",
   "success": true,
-  "projectFilePath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj",
+  "projectFilePath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj",
   "expectedPackageFiles": [
     "/Users/kolenpat/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/kolenpat/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512"

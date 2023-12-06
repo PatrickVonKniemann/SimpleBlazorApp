@@ -177,11 +177,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/FE.csproj",
+      "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/FE/FE.csproj",
       "projectName": "FE",
-      "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/FE.csproj",
+      "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/FE/FE.csproj",
       "packagesPath": "/Users/kolenpat/.nuget/packages/",
-      "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/obj/",
+      "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/FE/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/kolenpat/.nuget/NuGet/NuGet.Config"
@@ -197,8 +197,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj": {
-              "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj"
+            "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj": {
+              "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj"
             }
           }
         }

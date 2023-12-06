@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/API/API.csproj": {}
+    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/API/API.csproj": {}
   },
   "projects": {
-    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/API/API.csproj": {
+    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/API/API.csproj",
+        "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/API/API.csproj",
+        "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/API/API.csproj",
         "packagesPath": "/Users/kolenpat/.nuget/packages/",
-        "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/API/obj/",
+        "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kolenpat/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj": {
-                "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj"
+              "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj": {
+                "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj"
               }
             }
           }
@@ -99,14 +99,14 @@
         }
       }
     },
-    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj": {
+    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj",
+        "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj",
         "projectName": "Core",
-        "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj",
+        "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj",
         "packagesPath": "/Users/kolenpat/.nuget/packages/",
-        "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/obj/",
+        "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/kolenpat/.nuget/NuGet/NuGet.Config"

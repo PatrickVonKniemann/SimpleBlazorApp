@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CWinMYSleYfvULd2D/ukc+TqMt7sDiOBBhn42KPBphsjtpdxsUHfDguUlzd5c+A1UcXg3S5Bk9vU8R+l8ZsL8A==",
+  "dgSpecHash": "tZi4flravk3FjkhWiSLn/yVrPneTtl2Un2NW9R/grvbgoB5xRyHi1n51uOW1llbtH/gJLzsLSDRS6q8P8UoiKA==",
   "success": true,
-  "projectFilePath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/API/API.csproj",
+  "projectFilePath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/kolenpat/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/kolenpat/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
