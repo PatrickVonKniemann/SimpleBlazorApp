@@ -4,46 +4,49 @@
 
 @using FE.Services
 @using Core.Models
+@using Core
 @inject UserService UserService
 @inject NavigationManager NavigationManager
-
 
 <h1>Users</h1>
 
 <p>This component demonstrates fetching user data from a service.</p>
 
-@if (users == null)
+@if (_users == null)
 {
-    <p>
-        <em>Loading...</em>
-    </p>
+    <p><em>Loading...</em></p>
 }
-else if (users.Any())
+else if (_users.Any())
 {
     <button class="btn btn-primary" @onclick="CreateUser">Create New User</button>
     <table class="table">
         <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var user in users)
-        {
-            <tr>
-                <td>@user.Id</td>
-                <td>@user.Name</td>
-                <td>@user.Email</td>
-                <td>
-                    <button class="btn btn-info" @onclick="() => EditUser(user.Id)">Edit</button>
-                    <button class="btn btn-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
-                </td>
-            </tr>
-        }
+            @foreach (var user in _users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <td>
+                        <button class="btn btn-info" @onclick="() => EditUser(user.Id)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
+
+    <div>
+        <button class="btn btn-secondary" @onclick="PreviousPage" disabled="@(!CanGoPrevious)">Previous</button>
+        <button class="btn btn-secondary" @onclick="NextPage" disabled="@(!CanGoNext)">Next</button>
+    </div>
 }
 else
 {
@@ -51,12 +54,36 @@ else
 }
 
 @code {
-    private IEnumerable<UserReadDto>? users;
+    private IEnumerable<UserReadDto>? _users;
+    private Pagination _pagination = new ();
+    private bool CanGoPrevious => _pagination.Page > 1;
+    private bool CanGoNext => _users != null && _users.Count() == _pagination.ItemsPerPage;
 
     protected override async Task OnInitializedAsync()
     {
-        users = await UserService.GetAll();
+        await LoadUsers();
     }
+
+    private async Task LoadUsers()
+    {
+        _users = await UserService.GetAll(_pagination);
+    }
+
+    private async Task PreviousPage()
+    {
+        if (_pagination.Page > 1)
+        {
+            _pagination.Page--;
+            await LoadUsers();
+        }
+    }
+
+    private async Task NextPage()
+    {
+        _pagination.Page++;
+        await LoadUsers();
+    }
+
 
     private void CreateUser()
     {
@@ -70,7 +97,6 @@ else
 
     private void DeleteUser(int userId)
     {
-    // Implement user deletion logic here
+        // Implement user deletion logic here
     }
-
 }

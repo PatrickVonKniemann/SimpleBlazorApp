@@ -19,3 +19,9 @@ FE/obj/Debug/net6.0/
 
 # Specific Object files for Core project
 Core/obj/Debug/net6.0/refint/
+
+FE/bin/Debug/net6.0/FE.pdb
+
+FE/bin/Debug/net6.0/FE.dll
+
+FE/obj/staticwebassets.pack.sentinel
