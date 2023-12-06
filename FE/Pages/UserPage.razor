@@ -5,6 +5,7 @@
 @using FE.Services
 @using Core.Models
 @using Core
+@using System.Net
 @inject UserService UserService
 @inject NavigationManager NavigationManager
 
@@ -14,32 +15,34 @@
 
 @if (_users == null)
 {
-    <p><em>Loading...</em></p>
+    <p>
+        <em>Loading...</em>
+    </p>
 }
 else if (_users.Any())
 {
     <button class="btn btn-primary" @onclick="CreateUser">Create New User</button>
     <table class="table">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var user in _users)
-            {
-                <tr>
-                    <td>@user.Id</td>
-                    <td>@user.Name</td>
-                    <td>@user.Email</td>
-                    <td>
-                        <button class="btn btn-info" @onclick="() => EditUser(user.Id)">Edit</button>
-                        <button class="btn btn-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
-                    </td>
-                </tr>
-            }
+        @foreach (var user in _users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>
+                    <button class="btn btn-info" @onclick="() => EditUser(user.Id)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
 
@@ -55,7 +58,7 @@ else
 
 @code {
     private IEnumerable<UserReadDto>? _users;
-    private Pagination _pagination = new ();
+    private Pagination _pagination = new();
     private bool CanGoPrevious => _pagination.Page > 1;
     private bool CanGoNext => _users != null && _users.Count() == _pagination.ItemsPerPage;
 
@@ -89,14 +92,19 @@ else
     {
         NavigationManager.NavigateTo("/user/add");
     }
-    
+
     private void EditUser(int userId)
     {
         NavigationManager.NavigateTo($"/user/edit/{userId}");
     }
 
-    private void DeleteUser(int userId)
+    private async Task DeleteUser(int userId)
     {
-        // Implement user deletion logic here
+        var responseMessage = await UserService.DeleteUser(userId);
+        if (responseMessage.StatusCode == HttpStatusCode.OK)
+        {
+            await LoadUsers();
+        }
     }
+
 }

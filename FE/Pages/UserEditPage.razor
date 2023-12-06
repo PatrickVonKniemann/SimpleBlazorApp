@@ -6,19 +6,19 @@
 
 <h2>Edit User</h2>
 
-@if (userToEdit != null)
+@if (_userToEdit != null)
 {
-    <EditForm Model="userToEdit" OnValidSubmit="HandleValidSubmit">
-        <DataAnnotationsValidator />
+    <EditForm Model="_userToEdit" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator/>
 
         <div class="form-group">
-            <label for="name">Email:</label>
-            <InputText id="name" class="form-control" @bind-Value="userToEdit.Email" />
+            <label for="name">Name:</label>
+            <InputText id="name" class="form-control" @bind-Value="_userToEdit.Name"/>
         </div>
 
         <div class="form-group">
             <label for="email">Email:</label>
-            <InputText id="email" class="form-control" @bind-Value="userToEdit.Email" />
+            <InputText id="email" class="form-control" @bind-Value="_userToEdit.Email"/>
         </div>
 
         <button type="submit" class="btn btn-success">Save Changes</button>
@@ -27,22 +27,26 @@
 }
 else
 {
-    <p><em>Loading...</em></p>
+    <p>
+        <em>Loading...</em>
+    </p>
 }
 
 @code {
-    [Parameter] public int UserId { get; set; }
-    private UserReadDto userToEdit;
+
+    [Parameter]
+    public int UserId { get; set; }
+
+    private UserReadDto? _userToEdit;
 
     protected override async Task OnInitializedAsync()
     {
-       userToEdit = await UserService.GetById(UserId);
+        _userToEdit = await UserService.GetById(UserId);
     }
 
     private async Task HandleValidSubmit()
     {
-
-        await UserService.UpdateUser(UserId, userToEdit);
+        await UserService.UpdateUser(UserId, _userToEdit);
         NavigationManager.NavigateTo("/users");
     }
 
@@ -50,4 +54,5 @@ else
     {
         NavigationManager.NavigateTo("/users");
     }
+
 }

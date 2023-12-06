@@ -39,7 +39,7 @@ public class UserService
         return await httpClient.PostAsJsonAsync($"{BaseUrl}/user/add", user);
     }
 
-    public async Task<HttpResponseMessage> UpdateUser(int id, UserReadDto userToEdit)
+    public async Task<HttpResponseMessage> UpdateUser(int id, UserReadDto? userToEdit)
     {
         var userToUpdate = _mapper.Map<UserUpdateDto>(userToEdit);
         var httpClient = _httpClientFactory.CreateClient();
