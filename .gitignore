@@ -29,3 +29,5 @@ FE/obj/staticwebassets.pack.sentinel
 Core/obj/Debug/net6.0/
 
 FE/bin/Debug/net6.0/
+
+.DS_Store
