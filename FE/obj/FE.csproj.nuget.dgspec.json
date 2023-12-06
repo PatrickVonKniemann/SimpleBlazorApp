@@ -1,0 +1,135 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/FE.csproj": {}
+  },
+  "projects": {
+    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj",
+        "projectName": "Core",
+        "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj",
+        "packagesPath": "/Users/kolenpat/.nuget/packages/",
+        "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kolenpat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.412/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/FE.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/FE.csproj",
+        "projectName": "FE",
+        "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/FE.csproj",
+        "packagesPath": "/Users/kolenpat/.nuget/packages/",
+        "outputPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kolenpat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj": {
+                "projectPath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/Core/Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "HttpClientFactory": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.412/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

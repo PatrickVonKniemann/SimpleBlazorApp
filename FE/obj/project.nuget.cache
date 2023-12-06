@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "6XYNvuD527rfDZ7tyobxT7QpDJJYEVjAGNujvATnfWDGMdH8WZXjgo8TmV2YKX6L453H8OfC3pa65SnmRGxlpQ==",
+  "success": true,
+  "projectFilePath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/FE/FE.csproj",
+  "expectedPackageFiles": [
+    "/Users/kolenpat/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/kolenpat/.nuget/packages/httpclientfactory/1.0.5/httpclientfactory.1.0.5.nupkg.sha512",
+    "/Users/kolenpat/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
