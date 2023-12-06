@@ -1,12 +1,16 @@
 using Core;
-using API.Models;
 using API.Services;
+using Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[ProducesResponseType(StatusCodes.Status200OK)]
+[ProducesResponseType(StatusCodes.Status204NoContent)]
+[ProducesResponseType(StatusCodes.Status401Unauthorized)]
+[ProducesResponseType(StatusCodes.Status500InternalServerError)]
 public class UserController : ControllerBase
 {
     private IUserService UserService { get; }
@@ -19,10 +23,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("all")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
     public ActionResult<List<UserReadDto>> Get([FromQuery] Pagination? pagination)
     {
         _logger.LogInformation("Providing request for all users");
@@ -38,10 +39,6 @@ public class UserController : ControllerBase
     }
     
     [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public ActionResult<UserReadDto> GetBy(int id)
     {
         _logger.LogInformation("Providing request for user with id {Id}", id);
@@ -57,9 +54,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPost("add")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status403Forbidden)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public ActionResult Add(UserCreateDto user)
     {
         _logger.LogInformation("Providing request for adding user with {UserEmail}", user.Email);
@@ -70,9 +65,7 @@ public class UserController : ControllerBase
     }
     
     [HttpPut("update/{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status403Forbidden)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public ActionResult Update(int id, UserUpdateDto userToUpdate)
     {
         _logger.LogInformation("Providing request for updating user with id {Id}", id);
@@ -83,9 +76,7 @@ public class UserController : ControllerBase
     }
     
     [HttpDelete("delete/{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status403Forbidden)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public ActionResult Delete(int id)
     {
         _logger.LogInformation("Providing request for deleting user with id {Id}", id);

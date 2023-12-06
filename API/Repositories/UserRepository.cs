@@ -1,5 +1,5 @@
 using Core;
-using API.Models;
+using Core.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Repositories;

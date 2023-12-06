@@ -1,0 +1,44 @@
+﻿@page "/user/add"
+@using Core.Models
+@using FE.Services
+@inject UserService UserService
+@inject NavigationManager NavigationManager
+
+<h2>Add New User</h2>
+
+<EditForm Model="newUser" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <InputText id="name" class="form-control" @bind-Value="newUser.Name" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <InputText id="email" class="form-control" @bind-Value="newUser.Email" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Password:</label>
+        <InputText id="password" class="form-control" @bind-Value="newUser.Password" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Add User</button>
+    <button class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+</EditForm>
+
+@code {
+    private UserCreateDto newUser = new UserCreateDto();
+
+    private async Task HandleValidSubmit()
+    {
+        await UserService.AddUser(newUser);
+        NavigationManager.NavigateTo("/users");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/users");
+    }
+}

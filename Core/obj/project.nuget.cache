@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "X+6ZJgfNyOa6C8S9iWC79etEHUbxAS7D1w3FiF+sGxoly9mr4b/t9q8K7GEXzslE6hKDQTt2G89XKMpK5W/S8A==",
+  "dgSpecHash": "96EvKO74bfjiYGaaQZGDOAn7U70eO1zPMj4Gi/Gnl1zzvhe6eNR9Xumk2cRGEoFvI3u/wF7fm3F24zAp3UmKwQ==",
   "success": true,
   "projectFilePath": "/Users/kolenpat/DevProjects/SimpleApp (Blazor ASP)/SimpleBlazorApp/Core/Core.csproj",
   "expectedPackageFiles": [
     "/Users/kolenpat/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
-    "/Users/kolenpat/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512"
+    "/Users/kolenpat/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/kolenpat/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/kolenpat/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/kolenpat/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/Users/kolenpat/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/Users/kolenpat/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

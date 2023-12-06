@@ -1,15 +1,15 @@
 using AutoMapper;
 using Core;
-using API.Models;
 using API.Repositories;
+using Core.Models;
 
 namespace API.Services;
 
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
-    private readonly IMapper _mapper; // AutoMapper mapper
-
+    private readonly IMapper _mapper; 
+    
     public UserService(IMapper mapper,IUserRepository userRepository)
     {
         _mapper = mapper;

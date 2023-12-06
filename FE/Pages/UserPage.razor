@@ -3,8 +3,10 @@
 <PageTitle>Users</PageTitle>
 
 @using FE.Services
-@using API.Models
+@using Core.Models
 @inject UserService UserService
+@inject NavigationManager NavigationManager
+
 
 <h1>Users</h1>
 
@@ -12,10 +14,13 @@
 
 @if (users == null)
 {
-    <p><em>Loading...</em></p>
+    <p>
+        <em>Loading...</em>
+    </p>
 }
 else if (users.Any())
 {
+    <button class="btn btn-primary" @onclick="CreateUser">Create New User</button>
     <table class="table">
         <thead>
         <tr>
@@ -31,6 +36,10 @@ else if (users.Any())
                 <td>@user.Id</td>
                 <td>@user.Name</td>
                 <td>@user.Email</td>
+                <td>
+                    <button class="btn btn-info" @onclick="() => EditUser(user.Id)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteUser(user.Id)">Delete</button>
+                </td>
             </tr>
         }
         </tbody>
@@ -48,4 +57,20 @@ else
     {
         users = await UserService.GetAll();
     }
+
+    private void CreateUser()
+    {
+        NavigationManager.NavigateTo("/user/add");
+    }
+    
+    private void EditUser(int userId)
+    {
+        NavigationManager.NavigateTo($"/user/edit/{userId}");
+    }
+
+    private void DeleteUser(int userId)
+    {
+    // Implement user deletion logic here
+    }
+
 }

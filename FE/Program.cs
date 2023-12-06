@@ -7,6 +7,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<UserService>();
+builder.Services.AddAutoMapper(typeof(Core.Models.UserProfile).Assembly);
+
 
 var app = builder.Build();
 

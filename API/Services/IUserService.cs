@@ -1,5 +1,5 @@
 using Core;
-using API.Models;
+using Core.Models;
 
 namespace API.Services;
 
