@@ -17,8 +17,7 @@ public class UserRepository : IUserRepository
     {
         return appDbContext.Users.ToList();
     }
-    
-    
+
     public IEnumerable<User> GetAll(Pagination pagination)
     {
         var skipAmount = (pagination.Page - 1) * pagination.ItemsPerPage;
@@ -54,4 +53,8 @@ public class UserRepository : IUserRepository
         return appDbContext.Users.Find(id);
     }
 
+    public User GetByName(string name)
+    {
+        return appDbContext.Users.FirstOrDefault(user => user.Name == name);
+    }
 }

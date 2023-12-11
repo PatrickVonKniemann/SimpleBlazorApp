@@ -10,4 +10,5 @@ public interface IUserService
     void Update(int toUpdate, UserUpdateDto userToUpdate);
     void Delete(int id);
     User GetById(int id);
+    User Authenticate(string username, string password);
 }

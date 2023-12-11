@@ -2,6 +2,7 @@ using AutoMapper;
 using Core;
 using API.Repositories;
 using Core.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace API.Services;
 
@@ -9,11 +10,13 @@ public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
     private readonly IMapper _mapper; 
-    
-    public UserService(IMapper mapper,IUserRepository userRepository)
+    private readonly IPasswordHasher<User> _passwordHasher;
+
+    public UserService(IMapper mapper,IUserRepository userRepository, IPasswordHasher<User> passwordHasher)
     {
         _mapper = mapper;
         _userRepository = userRepository;
+        _passwordHasher = passwordHasher;
     }
 
     public IEnumerable<User> GetAll(Pagination? pagination)
@@ -29,6 +32,7 @@ public class UserService : IUserService
     public void Add(UserCreateDto user)
     {
         var userToCreate = _mapper.Map<User>(user);
+        user.Password = _passwordHasher.HashPassword(userToCreate, userToCreate.Password);
         _userRepository.Add(userToCreate);
     }
 
@@ -62,5 +66,22 @@ public class UserService : IUserService
     public User GetById(int id)
     {
         return _userRepository.GetById(id);
+    }
+    
+    public User Authenticate(string username, string password)
+    {
+        var foundedUser =  _userRepository.GetByName(username);
+        
+        if(foundedUser == null)
+        {
+            throw new Exception("User not found");
+        }
+
+        if (password.Equals(foundedUser.Password))
+        {
+            return foundedUser;    
+        }
+
+        return null;
     }
 }

@@ -10,5 +10,6 @@ public interface IUserRepository
     void Update(User userToUpdate);
     void Delete(User userToDelete);
     User GetById(int id);
+    User GetByName(string name);
     IEnumerable<User> GetAll(Pagination pagination);
 }

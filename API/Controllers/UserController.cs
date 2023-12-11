@@ -2,13 +2,13 @@ using Core;
 using API.Services;
 using Core.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-[Authorize]
 [ProducesResponseType(StatusCodes.Status200OK)]
 [ProducesResponseType(StatusCodes.Status204NoContent)]
 [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -18,6 +18,7 @@ public class UserController : ControllerBase
     private IUserService UserService { get; }
     private readonly ILogger<UserController> _logger;
 
+
     public UserController(ILogger<UserController> logger, IUserService userService)
     {
         _logger = logger;
@@ -25,6 +26,7 @@ public class UserController : ControllerBase
     }
     
     [HttpGet("all")]
+    [Authorize]
     public ActionResult<List<UserReadDto>> Get([FromQuery] Pagination? pagination)
     {
         _logger.LogInformation("Providing request for all users");
@@ -40,6 +42,7 @@ public class UserController : ControllerBase
     }
     
     [HttpGet("{id}")]
+    [Authorize]
     public ActionResult<UserReadDto> GetBy(int id)
     {
         _logger.LogInformation("Providing request for user with id {Id}", id);
