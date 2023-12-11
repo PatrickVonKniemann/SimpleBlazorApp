@@ -8,7 +8,6 @@ namespace FE_ClientSide.Services;
 
 public class UserService
 {
-    private const string BaseUrl = "https://localhost:7154";
 
     private readonly IMapper _mapper;
     private readonly HttpClient _httpClient;
@@ -16,7 +15,6 @@ public class UserService
     public UserService(HttpClient httpClient, IMapper mapper)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri(BaseUrl);
         _mapper = mapper;
     }
 
