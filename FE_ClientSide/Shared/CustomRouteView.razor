@@ -1,0 +1,41 @@
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components
+@using Blazored.LocalStorage
+@inject NavigationManager Navigation
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@code {
+    [Parameter] public RenderFragment NotFoundContent { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public Type DefaultLayout { get; set; }
+    [Parameter] public RouteData RouteData { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (!user.Identity.IsAuthenticated)
+        {
+            var token = await LocalStorage.GetItemAsync<string>("authToken");
+            if (string.IsNullOrEmpty(token))
+            {
+                Navigation.NavigateTo("/index"); // Redirect to Index.razor
+                return;
+            }
+        }
+    }
+}
+
+<Router AppAssembly="@typeof(Program).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="RouteData" DefaultLayout="DefaultLayout">
+            @ChildContent
+        </RouteView>
+    </Found>
+    <NotFound>
+        @NotFoundContent
+    </NotFound>
+</Router>
